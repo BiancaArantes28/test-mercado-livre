@@ -1,11 +1,19 @@
 
 import Header from './common/Header';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import HomeComponent from './pages/home/HomeComponent';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-    </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomeComponent} />
+          <Redirect to="/" />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
