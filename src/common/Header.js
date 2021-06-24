@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/css/header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
 import Logo from '../assets/logo.png';
 
 
@@ -15,7 +17,8 @@ const Header = () => {
                 <div className="content-input">
                     <input type="text" name="search" />
                     <button>
-                        <FontAwesomeIcon icon="search" />
+                        <FontAwesomeIcon icon={faSearch} />
+                        
                     </button>
                 </div>
             </div>

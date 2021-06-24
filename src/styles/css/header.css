@@ -14,12 +14,18 @@
     .header .content-header .content-input {
       width: 90%;
       float: left;
-      padding-left: 10px; }
+      padding-left: 10px;
+      display: flex; }
       .header .content-header .content-input input {
         width: 100%;
-        height: 35px; }
+        height: 35px;
+        border-radius: 5px 0px 0px 5px;
+        border: 1px solid #EEEEEE; }
       .header .content-header .content-input button {
         font-size: 16px;
-        float: left; }
+        float: left;
+        background-color: #EEEEEE;
+        border: 1px solid #EEEEEE;
+        border-radius: 0px 5px 5px 0px; }
 
 /*# sourceMappingURL=header.css.map */
