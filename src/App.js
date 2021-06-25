@@ -1,12 +1,14 @@
 
 import Header from './common/Header';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import store from './store';
 import HomeComponent from './pages/home/HomeComponent';
 import ProductsContainer from './pages/products/ProductsContainer';
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Router>
         <Switch>
@@ -15,7 +17,7 @@ function App() {
           <Redirect to="/" />
         </Switch>
       </Router>
-    </>
+    </Provider>
   );
 }
 
