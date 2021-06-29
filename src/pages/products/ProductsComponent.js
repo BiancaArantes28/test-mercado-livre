@@ -1,42 +1,32 @@
 import React from 'react';
 import '../../styles/css/products.css';
 
-const ProductsComponent = () => {
+const ProductsComponent = ({ categories, products }) => {
     return (
         <div className="content-products">
             <div className="breadcrumb">
                 <span>
-                    Eletrônica & audio > iPad > Reprodutores > 32 GB
+                    {categories && categories.join(" > ")}
                 </span>
             </div>
-            <div className="container-products">
-                <div className="box-product">
-                    <div className="product-detail border-bottom">
-                        <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=834&hei=1000&fmt=jpeg&qlt=95&.v=1566956144418" alt="iPhone" />
-                        <div className="product-info">
-                            <span className="price">$ 1.980</span>
-                            <p>Apple iPhone 11 com 32 gb de memória</p>
-                            <p className="product-status">Completo único!</p>
-                        </div>
-                        <div className="localtion">
-                            Capital Federal
-                        </div>
-                    </div>
-                </div>
-                <div className="box-product">
-                    <div className="product-detail border-bottom">
-                        <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=834&hei=1000&fmt=jpeg&qlt=95&.v=1566956144418" alt="iPhone" />
-                        <div className="product-info">
-                            <span className="price">$ 1.980</span>
-                            <p>Apple iPhone 11 com 32 gb de memória</p>
-                            <p className="product-status">Completo único!</p>
-                        </div>
-                        <div className="localtion">
-                            Capital Federal
+            {products.map(product => (
+                <div key={product.id} className="container-products">
+                    <div className="box-product">
+                        <div className="product-detail border-bottom">
+                            <img src={product.picture} alt="iPhone" />
+                            <div className="product-info">
+                                <span className="price">{product.price.currency} {product.price.amount},{product.price.decimals}</span>
+                                <p>{product.title}</p>
+                                <p className="product-status">{product.condition}</p>
+                            </div>
+                            <div className="localtion">
+                                Capital Federal
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            ))}
+           
         </div>
     );
 };
