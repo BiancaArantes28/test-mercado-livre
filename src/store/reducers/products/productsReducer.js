@@ -11,6 +11,7 @@ const withoutError = (state) => _.omit(state, 'error');
 const defaultState = {
     status: STATUS.NOT_FETCHED,
     products: [],
+    success: false,
 };
 
 const successfulProducts = (state, payload) => {
@@ -18,6 +19,8 @@ const successfulProducts = (state, payload) => {
         ...withoutError(state),
         status: STATUS.FETCHED,
         products: payload.items,
+        categories: payload.categories,
+        success: true,
     }
 };
 
@@ -25,7 +28,7 @@ export default function productsReducer(state = defaultState, action) {
     switch (action.type) {
         case FETCH_PRODUCTS:
             return {
-                ...state, status: STATUS.INPROGRESS,
+                ...state, status: STATUS.INPROGRESS, categories: [], products: [],
             };
 
         case FETCH_PRODUCTS_SUCCESSFUL:
@@ -33,7 +36,7 @@ export default function productsReducer(state = defaultState, action) {
 
         case FETCH_PRODUCTS_FAILED:
             return {
-                ...state, status: STATUS.FETCHED, error: action.payload
+                ...state, status: STATUS.FETCHED, error: action.payload, products: [], categories: [], success: false,
             }
 
         default:

@@ -1,6 +1,7 @@
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const FETCH_PRODUCTS_SUCCESSFUL = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILED = 'FETCH_PRODUCTS_FAILED';
+export const CHANGE_SUCCESS = 'CHANGE_SUCCESS';
 
 export const fetchProducts = (payload) => ({
     type: FETCH_PRODUCTS,

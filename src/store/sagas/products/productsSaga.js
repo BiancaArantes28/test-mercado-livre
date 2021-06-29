@@ -14,7 +14,6 @@ export function* doFetchProducts(action) {
         const url = `http://demo7207789.mockable.io/mla/search?q=${action.payload}`;
 
         const payload = yield call(fetchGet, url);
-
         yield put(fetchProductsSuccessful(payload));
     } catch (error) {
         yield put(fetchProductsFailed(error));
