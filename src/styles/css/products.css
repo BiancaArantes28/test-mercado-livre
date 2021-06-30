@@ -1,5 +1,8 @@
 .content-products {
   width: 100%; }
+  .content-products .link-product {
+    text-decoration: none;
+    color: #333333; }
   .content-products .breadcrumb {
     width: 80%;
     margin-right: auto;
